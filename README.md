@@ -1,4 +1,4 @@
-# startup
+# Startup
 ## Elevator Pitch:
 
 Introducing the Keen app—a tool to rekindle your powers of observation in today's content-driven world. We often rely on others' insights, losing touch with our ability to truly observe life. Keen empowers you to cultivate this skill.
