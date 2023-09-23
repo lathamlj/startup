@@ -5,6 +5,10 @@ Introducing the Keen app—a tool to rekindle your powers of observation in toda
 
 With Keen, it's easy. Simply post a daily observation on our public forum, from a small act of kindness to a profound societal insight. We believe every observation adds value, nurturing your ability to observe actively. Break free from passive content consumption and embrace the art of keen observation with the Keen app.
 
+## Key Features:
+
+Upon opening up the application, users will be prompted to login with an email and password. Features include being able to jot down and post daily observations--whether they be small and seemingly insignificant notes or grandiose realizations--as well as the ability to learn about what others are observing. The Keen app will also provide users with daily inspirational quotes to help spark an observant mind.
+
 ## Representation of all Technologies:
 
 **HTML:**
