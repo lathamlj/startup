@@ -1,0 +1,82 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-width: 375px;
+    background-color: #0e2a18fd; /* Dark background color */
+    color: #f9c396;
+}
+
+header {
+    flex: 0 80px;
+}
+
+main {
+    flex: 1 calc(100vh - 110px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#login-section{
+    width: 25%;
+}
+
+footer {
+    flex: 0 30px;
+}
+
+menu {
+    flex: 1;
+    display: flex;
+    /*  overwrite Bootstrap so the menu does not wrap */
+    flex-direction: row !important;
+    list-style: none;
+}
+
+.navbar-brand {
+    padding-left: 1em;
+    color: #f9c396;
+    font-size: 3em;
+}
+  
+menu .nav-item {
+    padding: 1em;
+    color: #f9c396;
+    text-decoration: none;
+}
+
+menu .nav-item a {
+    color: inherit;
+}
+
+menu .nav-item a:hover {
+    text-decoration: underline;
+}
+
+/* menu .nav-item {
+    padding: 1em;
+    color: #f9c396;
+} */
+
+footer a {
+    /* padding: 1em; */
+    float: right;
+}
+
+#observation-instructions{
+    align-items: center;
+    justify-content: space-around;
+}
+
+@media (max-height: 600px) {
+    header {
+      display: none;
+    }
+    footer {
+      display: none;
+    }
+    main {
+      flex: 1 100vh;
+    }
+}

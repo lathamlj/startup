@@ -2,55 +2,62 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- Tell browsers not to scale the viewport automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Keen HTML</title>
     <link rel="icon" href="favicon.ico" />
-  </head>
-  <body>
-    <!-- Use header, main, and footer elements to give semantic structure -->
-    <header>
-      <h1>Keen<sup>&reg;</sup></h1>
+    <link rel="stylesheet" href="main.css" />
 
-      <!-- Navigation elements -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"/>
+  </head>
+
+  <body>
+    <link rel="stylesheet" href="main.css" />
+    <header>
+      <a class="navbar-brand" href="#">Keen<sup>&reg;</sup></a>
       <nav>
-        <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
         <menu>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="observations.html">Observations</a></li>
+          <li class="nav-item">
+            <a class="text-decoration-none" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="text-decoration-none" href="observations.html">Observations</a>
+          </li>
           <!--<li><a href="scores.html">Scores</a></li>-->
-          <li><a href="about.html">Guidelines</a></li>
+          <li class="nav-item">
+            <a class="text-decoration-none" href="about.html">Guidelines</a>
+          </li>
         </menu>
       </nav>
-
-      <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
-      <hr />
     </header>
 
     <main>
       <h1>Welcome to Keen</h1>
-      <p>Login to begin your journey of practical observation!</p>
-      <form method="get" action="play.html">
-        <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Your name here" />
-        <button type="submit">Login</button>
-      </form>
 
-      <section id="observation-instructions">
-        <h2>Instructions for use of the Keen application:</h2>
-        <!--<p>subheader for instructions??</p>-->
-        <ul>
-            <li>We encourage users to get in the habit of logging at least one observation a day.</li>
-            <li>Simply enter an observation that you have made today. The goal of this app is to help</li>
-            <li>users to grow the habit of being more aware of their surroundings and observing the</li>
-            <li>natural world around them. By doing this and by learning from other users, we hope you</li>
-            <li>start to learn more from...</li>
-        </ul>
-    </section>
+      <p>Login to begin your journey of practical observation!</p>
+
+      <div id="login-section" class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="name" aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary" type="button" id="button-addon2">submit</button>
+      </div>
+
+      <div id="observation-instructions">
+        <h2>Instructions</h2>
+
+        <div>
+            <p>We encourage users to get in the habit of logging at least one observation a day.<br>
+              Simply enter an observation that you have made today. The goal of this app is to help<br>
+              users to grow the habit of being more aware of their surroundings and observing the<br>
+              natural world around them. By doing this and by learning from other users, we hope you<br>
+              start to learn more from...</p>
+        </div>
+      </div>
     </main>
 
     <footer>
-      <hr />
       <span class="text-reset">Authored by Latham Jeppson</span>
       <br />
       <a href="https://github.com/lathamlj/startup.git">GitHub</a>

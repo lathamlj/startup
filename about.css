@@ -1,0 +1,37 @@
+#landscape{
+    max-height: 25%;
+}
+
+.landscape-box {
+    height: 25%;
+    margin-bottom: 1em;
+    padding: 0.2em;
+    background: #f9c396;
+    border-radius: 5px;
+}
+
+/* #picture img {
+    width: 100%;
+    height: 100%;
+} */
+
+.quote-box {
+    margin-top: 1em;
+    padding: 0.5em;
+    border-radius: 5px;
+    /* border: 5px; */
+    border-color: #f9c396;
+}
+  
+.quote {
+    font-style: italic;
+}
+
+.author {
+    font-weight: bold;
+    text-align: right;
+}
+  
+.author::before {
+    content: " - ";
+}
