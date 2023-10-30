@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Keen HTML</title>
     <link rel="icon" href="favicon.ico" />
+    <script src="login.js"></script>
     <link rel="stylesheet" href="main.css" />
 
     <link
@@ -40,8 +41,8 @@
       <p>Login to begin your journey of practical observation!</p>
 
       <div id="login-section" class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="name" aria-describedby="button-addon2">
-        <button class="btn btn-outline-secondary" type="button" id="button-addon2">submit</button>
+        <input type="text" id="name" class="form-control" placeholder="name" aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="login()">submit</button>
       </div>
 
       <div id="observation-instructions">
