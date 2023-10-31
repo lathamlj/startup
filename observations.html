@@ -16,54 +16,55 @@
     />
   </head>
   <body>
-      <link rel="stylesheet" href="main.css" />
-      <header>
-        <a class="navbar-brand" href="#">Keen<sup>&reg;</sup></a>
-        <nav>
-          <menu>
-            <li class="nav-item">
-              <a class="text-decoration-none" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="text-decoration-none" href="observations.html">Observations</a>
-            </li>
-            <!--<li><a href="scores.html">Scores</a></li>-->
-            <li class="nav-item">
-              <a class="text-decoration-none" href="about.html">Guidelines</a>
-            </li>
-          </menu>
-        </nav>
-      </header>
+    <link rel="stylesheet" href="main.css" />
+    <header>
+      <a class="navbar-brand" href="#">Keen<sup>&reg;</sup></a>
+      <nav>
+        <menu>
+          <li class="nav-item">
+            <a class="text-decoration-none" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="text-decoration-none" href="observations.html">Observations</a>
+          </li>
+          <li class="nav-item">
+            <a class="text-decoration-none" href="about.html">Guidelines</a>
+          </li>
+        </menu>
+      </nav>
+    </header>
 
-      <main>
+    <main>
 
-        <div class="form-floating">
-          <textarea placeholder="observations" id="floatingTextarea2"
-          style="width: 100%; display: flex; justify-content: center; align-items: center; border-radius: 5px;" ></textarea>
-        </div>
+      <div class="form-floating">
+        <textarea placeholder="observations" id="floatingTextarea2" style="width: 100%; display: flex; justify-content: center; align-items: center; border-radius: 5px;"></textarea>
+      </div>
 
-        <div class="players">
-          User:
-          <span class="userName"></span>
-        </div>
-        <ul class="notification">
-          <li class="player-name">Latham made an observation</li>
-          <li class="player-name">Ada made an observation</li>
-          <li class="player-name">Latham made an observation</li>
-        </ul>
+      <div>
+        <button type="button" id="save-observation" class="btn btn-primary">Save</button>
+      </div>
 
-        <div>
-          <button type="button" class="btn btn-success">refresh</button>
-        </div>
+      <div id="display-observation"></div>
 
-        <br />
-      </main>
+      <div class="players">
+        User:
+        <span class="userName"></span>
+      </div>
 
-      <footer>
-        <span class="text-reset">Authored by Latham Jeppson</span>
-        <br />
-        <a href="https://github.com/lathamlj/startup.git">GitHub</a>
-      </footer>
-      <script src="observations.js"></script>
+      <div id="observations-container"></div>
+
+      <!-- <div>
+        <button type="button" class="btn btn-success">refresh</button>
+      </div> -->
+
+      <br />
+    </main>
+
+    <footer>
+      <span class="text-reset">Authored by Latham Jeppson</span>
+      <br />
+      <a href="https://github.com/lathamlj/startup.git">GitHub</a>
+    </footer>
+    <script src="observations.js"></script>
   </body>
 </html>
