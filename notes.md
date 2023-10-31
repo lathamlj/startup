@@ -9,3 +9,6 @@ made several uses of various html variables such as the following: section, form
 
 10/14/23
 must learn how to use the css debugger tool thing from the website explorer. so so helpful but I still stink at it.
+
+10/30/23
+JSON objects replace local storage
