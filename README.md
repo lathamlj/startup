@@ -4,12 +4,11 @@
 ![rough sketches 3](sketch_3.jpg)
 
 # JavaScript
-
-Quick Explanation:
-login.js saves username locally and prompts user to "observations" page
+Quick Explanation:<br>
+login.js saves username locally and prompts user to "observations" page<br>
 observations.js saves username and observations entered in JSON objects which are displayed on screen
 
-Longer Explanation:
+Longer Explanation:<br>
 I added a login.js file that is very similar to the one implemented in Simon. This login.js handles the user name for now.
 Enter a user name and then click "submit" the javascript will save your user name and direct it to the "observations" page.
 The "observations" page is where the observations.js file comes in to play. You can enter your daily observations into the 
