@@ -60,5 +60,5 @@ class Observations {
     }
 }
 
-//instantiate the Observations class when the script loads
+//instantiate the observations class when the script loads
 new Observations();
