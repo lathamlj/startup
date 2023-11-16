@@ -19,4 +19,10 @@ the user's user name with a little message stating "(username) made an observati
 
 # startup-service
 
-This deliverable demonstrates converting the JavaScript application into a web application by implementing a web service that listens on a network port for HTTP requests.
+This deliverable demonstrates converting the JavaScript application into a web application by implementing a web service that listens on a network port for HTTP requests.<br>
+Moved all my frontend files into a public folder<br>
+Added '.gitignore', 'LICENSE', 'package-lock.json', 'package.json'<br>
+Created index.js which creates the service by implementing node.js, express, specifies the port number,
+and endpoints necessary for my application. See 'observations.js' for corresponding functions.<br>
+Please note that previously submitted observations are now available for user to view after submitting an observation themselves.<br>
+Please note the third party endpoint in the "Guidelines" page (about.html) that cycles through randomly generated quotes.

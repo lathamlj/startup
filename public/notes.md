@@ -246,3 +246,6 @@ Yes, a DNS A record can point to an IP address or another A record, allowing for
 Port 443 is reserved for HTTPS, port 80 is reserved for HTTP, and port 22 is reserved for SSH.
 34. Describe how Promises output when executed?
 Promises in JavaScript output asynchronously when they are resolved or rejected, allowing for more predictable handling of asynchronous operations.
+
+11/16/2023
+deployed service functionality.
