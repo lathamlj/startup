@@ -1,7 +1,7 @@
 {
   "name": "startup",
   "version": "1.0.0",
-  "description": "",
+  "description": "![rough sketches of application 1](/Users/lathamjeppson/Desktop/cs260/startup/sketch_1.jpg) ![rough sketches 2](sketch_2.jpg) ![rough sketches 3](sketch_3.jpg)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongodb": "^6.3.0"
   }
 }

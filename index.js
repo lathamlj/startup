@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const DB = require('./database.js');
 
 // The service port. In production, the frontend code is statically hosted by the service on the same port.
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
@@ -15,18 +16,41 @@ const apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
 // Get Observations
-apiRouter.get('/observations', (_req, res) => {
-  res.send(observations);
-  //res.json({ observations: [] });
+apiRouter.get('/observations', async (_req, res) => {
+    try {
+        const observations = await DB.getObservation();
+        res.json({ observations });
+    } catch (error) {
+        console.error('Error fetching observations:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+  
+// Save Observation
+apiRouter.post('/observations', async (req, res) => {
+    const { observation } = req.body;
+    try {
+        const result = await DB.saveObservation({ observation });
+        res.json({ message: 'Observation saved successfully!', result });
+    } catch (error) {
+        console.error('Error saving observation:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
 });
 
-// Save Observation
-apiRouter.post('/observations', (req, res) => {
-  // save observation in database?
-  observations = saveObservation(req.body, observations);
-  res.send(observations)
-  //res.json({ message: 'Observation saved successfully!' });
-});
+// // Get Observations
+// apiRouter.get('/observations', (_req, res) => {
+//   res.send(observations);
+//   //res.json({ observations: [] });
+// });
+
+// // Save Observation
+// apiRouter.post('/observations', (req, res) => {
+//   // save observation in database?
+//   observations = saveObservation(req.body, observations);
+//   res.send(observations)
+//   //res.json({ message: 'Observation saved successfully!' });
+// });
 
 // Return the application's default page if the path is unknown
 app.use((_req, res) => {
@@ -37,8 +61,8 @@ app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
 
-let observations = [];
-function saveObservation(newObservation, observations) {
-    observations.push({ observation: newObservation});
-    return observations;
-}
+// let observations = [];
+// function saveObservation(newObservation, observations) {
+//     observations.push({ observation: newObservation});
+//     return observations;
+// }
