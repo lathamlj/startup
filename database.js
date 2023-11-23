@@ -20,14 +20,14 @@ async function saveObservation(observation) {
   return result;
 }
 
-function getObservation() {
-    const query = {};
-    const options = {
-      sort: { observation: -1 },
-      limit: 10,
-    };
-    const cursor = observationCollection.find(query, options);
-    return cursor.toArray();
+function getObservations() {
+  const query = {};
+  const options = {
+    sort: { observation: -1 },
+    limit: 10,
+  };
+  const cursor = observationCollection.find(query, options);
+  return cursor.toArray();
 }
 
-module.exports = { saveObservation, getObservation };
+module.exports = { saveObservation, getObservations };

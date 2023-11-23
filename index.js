@@ -15,42 +15,41 @@ app.use(express.static('public'));
 const apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
+// // Get Observations
+// apiRouter.get('/observations', async (_req, res) => {
+//     try {
+//         const observations = await DB.getObservation();
+//         res.json({ observations });
+//     } catch (error) {
+//         console.error('Error fetching observations:', error);
+//         res.status(500).json({ error: 'Internal Server Error' });
+//     }
+// });
+  
+// // Save Observation
+// apiRouter.post('/observations', async (req, res) => {
+//     const { observation } = req.body;
+//     try {
+//         const result = await DB.saveObservation({ observation });
+//         res.json({ message: 'Observation saved successfully!', result });
+//     } catch (error) {
+//         console.error('Error saving observation:', error);
+//         res.status(500).json({ error: 'Internal Server Error' });
+//     }
+// });
+
 // Get Observations
 apiRouter.get('/observations', async (_req, res) => {
-    try {
-        const observations = await DB.getObservation();
-        res.json({ observations });
-    } catch (error) {
-        console.error('Error fetching observations:', error);
-        res.status(500).json({ error: 'Internal Server Error' });
-    }
+    const observations = await DB.getObservations();
+    res.send(observations);
 });
-  
+
 // Save Observation
 apiRouter.post('/observations', async (req, res) => {
-    const { observation } = req.body;
-    try {
-        const result = await DB.saveObservation({ observation });
-        res.json({ message: 'Observation saved successfully!', result });
-    } catch (error) {
-        console.error('Error saving observation:', error);
-        res.status(500).json({ error: 'Internal Server Error' });
-    }
+    DB.saveObservation(req.body);
+    const observations = await DB.getObservations();
+    res.send(observations)
 });
-
-// // Get Observations
-// apiRouter.get('/observations', (_req, res) => {
-//   res.send(observations);
-//   //res.json({ observations: [] });
-// });
-
-// // Save Observation
-// apiRouter.post('/observations', (req, res) => {
-//   // save observation in database?
-//   observations = saveObservation(req.body, observations);
-//   res.send(observations)
-//   //res.json({ message: 'Observation saved successfully!' });
-// });
 
 // Return the application's default page if the path is unknown
 app.use((_req, res) => {
