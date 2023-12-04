@@ -38,8 +38,22 @@
     </header>
 
     <main>
-      <class="container-fluid bg-secondary text-center">
-      <table class="table table-warning table-striped-columns">
+
+      <div class="form-floating">
+        <textarea placeholder="observations" id="floatingTextarea2" style="width: 100%; display: flex; justify-content: center; align-items: center; border-radius: 5px;"></textarea>
+      </div>
+
+      <div>
+        <button type="button" id="save-observation" class="btn btn-primary">Save</button>
+      </div>
+
+        <div class="players">
+            User:
+            <span class="userName"></span>
+        </div> 
+
+      <!-- <class="container-fluid bg-secondary text-center"> -->
+      <!-- <table class="table table-warning table-striped-columns">
         <thead class="table-dark">
           <tr>
             <th>#</th>
@@ -49,14 +63,14 @@
           </tr>
         </thead>
         <tbody id="observations"></tbody>
-      </table>
+      </table> -->
+    <!-- 
+      <div id="display-observation"></div>
 
-      <!-- <div id="display-observation"></div>
-
-      <div class="players">
+    <div class="players">
         User:
         <span class="userName"></span>
-      </div>
+    </div> 
 
       <div id="observations-container"></div> -->
 
@@ -72,6 +86,6 @@
       <br />
       <a href="https://github.com/lathamlj/startup.git">GitHub</a>
     </footer>
-    <script src="observations.js"></script>
+    <script src="submit.js"></script>
   </body>
 </html>
