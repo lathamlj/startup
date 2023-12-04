@@ -26,3 +26,7 @@ Created index.js which creates the service by implementing node.js, express, spe
 and endpoints necessary for my application. See 'observations.js' for corresponding functions.<br>
 Please note that previously submitted observations are now available for user to view after submitting an observation themselves.<br>
 Please note the third party endpoint in the "Guidelines" page (about.html) that cycles through randomly generated quotes.
+
+# startup-db
+
+I added database.js to my code. I also edited my index.js, observations.js and login.js. I also added a submit.js and submit.html page. The reason for adding the submit.js was to seperate the submission of the observations and the viewing of users' past observations. Besides that, another adjustment I had to make was to create the observationDataFunc function which concatenates the username and the observation into one string to save to localStorage. I then submit the observation to my MongoDB with the collection name: keen.observation. The observations.js page pulls that data from the Mongo DB instead of just displaying the localStorage.
