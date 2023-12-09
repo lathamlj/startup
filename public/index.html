@@ -6,6 +6,7 @@
     <title>Keen HTML</title>
     <link rel="icon" href="favicon.ico" />
     <script src="login.js"></script>
+    <!-- <link rel="stylesheet" href="login.css" /> -->
     <link rel="stylesheet" href="main.css" />
 
     <link
@@ -24,7 +25,7 @@
           <li class="nav-item">
             <a class="text-decoration-none" href="index.html">Home</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="text-decoration-none" href="submit.html">Submit</a>
           </li>
           <li class="nav-item">
@@ -32,30 +33,62 @@
           </li>
           <li class="nav-item">
             <a class="text-decoration-none" href="about.html">Guidelines</a>
-          </li>
+          </li> -->
         </menu>
       </nav>
     </header>
 
     <main>
-      <h1>Welcome to Keen</h1>
+      <div>
+        <h1>Welcome to Keen</h1>
+        <!-- Displayed when needing authentication -->
+        <div id="loginControls" style="display: none">
+          <div class="input-group mb-3">
+            <span class="input-group-text">@</span>
+            <input class="form-control" type="text" id="userName" placeholder="your@email.com" />
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">🔒</span>
+            <input class="form-control" type="password" id="userPassword" placeholder="password" />
+          </div>
+          <button type="button" class="btn btn-primary" onclick="loginUser()">Login</button>
+          <button type="button" class="btn btn-primary" onclick="createUser()">Create</button>
+        </div>
+        <!-- Displayed when ready to play -->
+        <div id="playControls" style="display: none">
+          <div id="playerName"></div>
+          <button type="button" class="btn btn-primary" onclick="play()">Continue</button>
+          <button type="button" class="btn btn-secondary" onclick="logout()">Logout</button>
+        </div>
 
-      <p>Login to begin your journey of practical observation!</p>
+        <!-- Error dialog -->
+        <div class="modal fade" id="msgModal" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-dark">
+              <div class="modal-body">error message here</div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      <div id="login-section" class="input-group mb-3">
-        <input type="text" id="name" class="form-control" placeholder="name" aria-describedby="button-addon2">
-        <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="login()">submit</button>
-      </div>
+        <p>Login to begin your journey of practical observation!</p>
 
-      <div id="observation-instructions">
-        <h2>Instructions</h2>
+        <!-- <div id="login-section" class="input-group mb-3">
+          <input type="text" id="name" class="form-control" placeholder="name" aria-describedby="button-addon2">
+          <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="login()">submit</button>
+        </div> -->
 
-        <div>
-            <p>We encourage users to get in the habit of logging at least one observation a day.<br>
-              Simply enter an observation that you have made today. The goal of this app is to help<br>
-              users to grow the habit of being more aware of their surroundings and observing the<br>
-              natural world around them. By doing this and by learning from other users, we hope you<br>
-              start to learn more from...</p>
+        <!-- <div id="observation-instructions"> -->
+          <h2>Instructions</h2>
+          <div>
+              <p>We encourage users to get in the habit of logging at least one observation a day.<br>
+                Simply enter an observation that you have made today. The goal of this app is to help<br>
+                users to grow the habit of being more aware of their surroundings and observing the<br>
+                natural world around them. By doing this and by learning from other users, we hope you<br>
+                start to learn more from...</p>
+          </div>
         </div>
       </div>
     </main>
