@@ -33,4 +33,4 @@ I added database.js to my code. I also edited my index.js, observations.js and l
 
 # simon-login
 
-This deliverable demonstrates authenticating users and storing credentials and authentication tokens in MongoDB. I took most of the code from Simon-login to use for my startup.
+This deliverable demonstrates authenticating users and storing credentials and authentication tokens in MongoDB. I took most of the code from Simon-login to use for my startup.<br>Ensured that login and password is saving to MongoDB and that cookie is working. Please see changes made to Database.js, Index.js and Login.js. All these changes are almost exactly what you'll find in Simon-login. I also edited my index.html page to look more like Simon-login page.

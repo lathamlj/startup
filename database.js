@@ -8,6 +8,7 @@ const client = new MongoClient(url);
 //await client.connect
 const db = client.db('keen');
 //db.createCollection('observation')
+//db.createCollection('user')
 //console.log('before connect statement')
 const userCollection = db.collection('user'); //havent created userCollection yet
 const observationCollection = db.collection('observation');
