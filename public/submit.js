@@ -1,4 +1,8 @@
+// Event messages
+const SubmissionEndEvent = 'submissionEnd';
+
 class Submission {
+  socket;
   constructor() {
     // Wait for the DOM to fully load
     document.addEventListener('DOMContentLoaded', () => {
@@ -25,6 +29,8 @@ class Submission {
 
         // Display the user's observation and name
         this.observationDataFunc(userName, observation);
+
+        this.configureWebSocket();
       });
     });
   }
@@ -63,6 +69,9 @@ class Submission {
     } catch (error) {
       console.error('Error saving observation:', error);
     }
+
+    // Let other users know an observation has been made
+    this.broadcastEvent(this.getUserName(), SubmissionEndEvent, {});
   }
 
   getUserName() {
@@ -87,23 +96,6 @@ class Submission {
     localStorage.setItem('observationData', JSON.stringify(observationData));
   }
 
-  // displayObservation(userName, observation) {
-  //   let observationData = { userName, observation };
-  //   console.log(observationData);
-  //   console.log("this is observationData");
-  //   this.saveObservationToJSON(observationData);
-  //   //this.updateObservationsUI(container);
-  // }
-
-  // saveObservationToJSON(observationData) {
-  //   let obsArray = [];
-  //   let observations = JSON.parse(localStorage.getItem('userObservation')) || [];
-  //   //observations.push(observationData);
-  //   obsArray.push(observationData);
-  //   localStorage.setItem('userObservation', JSON.stringify(observations));
-  //   console.log(observations);
-  // }
-
   updateObservationsUI(container) {
     const observations = JSON.parse(localStorage.getItem('observations')) || [];
 
@@ -113,6 +105,40 @@ class Submission {
     }
 
     container.innerHTML = observationHTML;
+  }
+
+  // Functionality for peer communication using WebSocket
+
+  configureWebSocket() {
+    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    this.socket.onopen = (event) => {
+      this.displayMsg('system', 'game', 'connected');
+    };
+    this.socket.onclose = (event) => {
+      this.displayMsg('system', 'game', 'disconnected');
+    };
+    this.socket.onmessage = async (event) => {
+      const msg = JSON.parse(await event.data.text());
+      if (msg.type === SubmissionEndEvent) {
+        this.displayMsg('user', msg.from, `made an observation`);
+      }
+    };
+  }
+
+  displayMsg(cls, from, msg) {
+    const chatText = document.querySelector('#user-messages');
+    chatText.innerHTML =
+      `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
+  }
+
+  broadcastEvent(from, type, value) {
+    const event = {
+      from: from,
+      type: type,
+      value: value,
+    };
+    this.socket.send(JSON.stringify(event));
   }
 }
 
