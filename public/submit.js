@@ -88,6 +88,7 @@ class Submission {
     let observationData = { userName, observation };
     //currentObservations.push(JSON.stringify(observationData));
     currentObservations = [...currentObservations, observationData]
+    console.log(currentObservations);
     localStorage.setItem('observations', JSON.stringify(currentObservations));
   }
 
