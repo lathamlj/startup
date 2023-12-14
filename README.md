@@ -34,3 +34,10 @@ I added database.js to my code. I also edited my index.js, observations.js and l
 # startup-login
 
 This deliverable demonstrates authenticating users and storing credentials and authentication tokens in MongoDB. I took most of the code from Simon-login to use for my startup.<br>Ensured that login and password is saving to MongoDB and that cookie is working. Please see changes made to Database.js, Index.js and Login.js. All these changes are almost exactly what you'll find in Simon-login. I also edited my index.html page to look more like Simon-login page.
+
+# startup-web sockets
+
+I implemented the use of web sockets by mostly following along with the simon-websockets deliverable and the websocket chat example provided. When two users are logged in at the same time and when one user submits an observationm the screen on the submit.html page will display "game connected" and then it will display the words "(other username) just made an observation" this way the two users will notify each other when theyve submitted observations. Their observations will then be available to see in the observations.html page.<br>
+Please see the peerproxy.js file which is new and creates and handles the websocket objects.<br>
+Minor changes have been made in the index.js file to call the peerproxy function in order to run the http service<br>
+some changes were also made to the submit.html page as well to display the messages created by the web socket objects
