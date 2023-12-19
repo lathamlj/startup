@@ -249,3 +249,295 @@ Promises in JavaScript output asynchronously when they are resolved or rejected,
 
 11/16/2023
 deployed service functionality.
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+
+
+
+12/18/2023
+What ports are used for HTTP, HTTPS, SSH?
+ HTTP: 80, HTTPS: 443, SSH: 22
+
+What do HTTP status codes in the 300, 400, 500 range indicate?
+300: content redirects or caching, 400: Client error, 500: Server error
+
+What does the HTTP header content-type allow you to do?
+Specifies the media type of the resource, allowing the browser to handle it appropriately.
+
+What do the following attributes of a cookie do?
+Domain
+Path
+SameSite
+HTTPOnly
+Domain: Specifies the domain to which the cookie belongs
+Path: Specifies the URL path the cookie is valid for
+SameSite: Controls when the cookie is sent
+HTTPOnly: Prevents access to cookies via JavaScript.
+
+Assuming the following Express middleware, what would be the console.log output for an HTTP GET request with a URL path of /foo/bar?
+It depends on the middleware implementation.
+
+Given the following Express service code: What does the following JavaScript fetch return?
+It returns a Promise that resolves to the Response to that request, whether it is successful or not.
+
+Given the following MongoDB query
+{ cost: { $gt: 10 }, name: /fran.*/}
+select all of the matching documents.
+Selects documents with a cost greater than 10 and a name starting with "fran."
+
+How should you store user passwords in a database?
+Hash and salt passwords before storing.
+
+Assuming the following Node.js service code is executing with websockets, what will be logged to the console of the web browser?
+It depends on the WebSocket implementation.
+
+What is the WebSocket protocol used for?
+Facilitates bidirectional communication between a client and a server.
+
+What is JSX and how are the curly braces rendered?
+JSX is a syntax extension for JavaScript used with React. Curly braces are used for embedding expressions.
+
+Assuming a HTML document with a 
+<div id="root"></div>
+element, what content will the following React component generate?
+      function Welcome(props) {
+        return <h1>Hello, {props.name}</h1>;
+      }
+      function App() {
+        return (
+          <div>
+            <Welcome name="Sara" />
+            <Welcome name="Cahal" />
+            <Welcome name="Edite" />
+          </div>
+        );
+      }
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<App />);
+Three "Welcome" components with different names inside a "div."
+
+Assuming a HTML document with a 
+<div id="root"></div>
+element, what content will the following React component generate?
+    function Numbers() { 
+      const numbers = [1, 2, 3, 4, 5];
+      const listItems = numbers.map((number) =>
+        <li>{number}</li>
+      );
+      return(<ul>{listItems}</ul>)
+    }
+    const root = ReactDOM.createRoot(document.getElementById('root')); 
+    root.render(<Numbers/>);
+An unordered list of numbers from 1 to 5.
+
+What does the following React component do?
+function Example() {
+  // Declare a new state variable, which we'll call "count" 
+  const [count, setCount] = useState(0);
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+Manages a state variable "count" and renders a paragraph and button that increments the count on click.
+
+What are React Hooks used for?
+React Hooks are used to add state and lifecycle features to functional components.
+
+What is the useEffect hook used for?
+The useEffect hook is used for side effects in functional components, such as data fetching or subscriptions.
+
+What does this code do?
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+ Sets up routes using React Router for a single-page application.
+
+What role does npm play in web development?
+Manages dependencies and scripts for a Node.js project.
+
+What does package.json do in a npm project?
+The fetch function is used to make network requests, typically to APIs, and returns a Promise.
+
+What does the fetch function do?
+Node.js is a JavaScript runtime that allows server-side scripting.
+
+What does node.js do?
+npm is a package manager for JavaScript that helps manage project dependencies.
+
+What does Vite do?
+Vite is a build tool for modern web development, focusing on fast development and optimized builds.
+
+For the request [GET] /fav/george what is logged?
+
+app.use(function (req, res, next) {
+	console.log(‘paul’);
+	next();
+});
+
+app.put(‘/fav/:person’, (req, res, next) => {
+	console.log(‘ringo’);
+	next();
+});
+
+app.get(‘/fav/:person’, (req, res, next) => {
+	console.log(req.params.person);
+	next();
+});
+
+app.get(‘/*’, (req, res, next) => {
+	console.log(‘john’);
+	next();
+});
+
+app.use((_req, res) => res.send());
+
+Results in: 
+paul george john
+
+Which express middleware will match this fetch request?
+const r = await fetch(‘/fav/ringo’, {
+	method: ‘DELETE’
+});
+Right answer:
+app.delete(/fav\/(.*)/, () => {})
+Wrong answers:
+app.get('/fav/:id', () => {})
+app.delete('/favorite/:id', () => {})
+app.get('/ringo', () => {})
+
+What document matches this MongoDB query?
+{ $or: [{name:/J.*/}, {score: {$lt:3}}]}
+Right answer:
+{ name: "Walke", score: -55 }
+Wrong answers:
+{ name: "harry", score: 5 }
+{ name: "bud", score:3 }
+{ name: john, score: 337 }
+
+Why is hashing stored passwords important?
+It improves security by making the password unreadable
+
+Given the following code, what will the console.log print?
+// executed on server
+Const {WebSocketServer } = require(‘ws’);
+Const wss = new WebSocketServer({ port: 9900 });
+
+wss.on(‘connection’, (ws) => {
+	ws.on(‘message’, (data) => {
+		Const msg = String.fromCharCode(...data);
+		ws.send(`Server:${msg}`);
+	});
+});
+
+// executed on browser
+Const socket = new WebSocket(‘ws://localhost:9900’);
+Socket.onmessage = (event) => {
+	console.log(`Client:${event.data}`);
+};
+socket.send(‘Hello’);
+
+Client:Server:Hello
+Not:
+Hello:Client:Server
+Hello:Server:Client
+Server:Client:Hello
+
+What value does WebSocket add to HTTP?
+It is peer to peer instead of client to server
+
+What is NOT a purpose of JSX?
+This one is NOT: To combine CSS, HTML, and JavaScript
+To inject your HTML into your JavaScript
+To componentize your HTML
+To allow for composability of your HTML
+
+What will component A initially display?
+Const B = () => <b>burger</b>;
+Const C = () => <b>fish</b>;
+Const D = () => <b>taco</b>;
+Const B = () => {
+	Const [v, updateV] = React.useState(false);
+	Const [x, updateX] = React.useState(B);
+	
+	Let o = <C />;
+	If (v) {
+		o = <B />;
+	}
+
+	React.useEffect(() => updateX(D), [v]);
+
+	Return (
+		<p onClick={() => updateV(true)}>{x}{o}</p>
+	);
+};
+
+Tacofish
+NOT:
+burgerfish
+burgerburger
+tacoburger
+
+What component will the URL ‘/burger’ render?
+<BrowserRouter>
+  <div className=’app’>
+    <nav>
+      <NavLink to=’/’>A</NavLink>
+      <NavLink to=’/burger’>C</NavLink>
+    <nav>
+
+    <main>
+      <Routes>
+        <Routh path=’/’ element={<A />} exact />
+        <Routh path=’/burger’ element={<B />} />
+        <Routh path=’*’ element={<C />} />
+      </Routes>
+    </main>
+  </div>
+</BrowserRouter>
+
+Answer: B
+
+What does the command npm install ws do?
+Adds template code for websockets to your JavaScript
+NOT:
+Locks the version of the websocket package for your application
+Adds the websocket source code to the node_modules directory
+Adds a dependency to your package.json file
+
+You can use fetch in front end and back end code?
+True
+
+Which of the following is NOT true about a Linux daemon?
+Answer: Cannot fork other processes
+NOT:
+Executes independent of a user
+Starts when the computer is rebooted
+PM2 is an example of a daemon
+
+Which is not a standard HTTP header?
+answer: Language
+NOT:
+Content-Type
+Host
+Cookie
+
+Cookies allow:
+a server to store data on the client
